@@ -1,1 +1,104 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: RubikLight;
+  src: url(assets/fonts/Rubik-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: RubikItalic;
+  src: url(assets/fonts/static/Rubik-Italic.ttf);
+}
+@font-face {
+  font-family: RubikMedium;
+  src: url(assets/fonts/static/Rubik-Medium.ttf);
+}
+@font-face {
+  font-family: RubikRegular;
+  src: url(assets/fonts/static/Rubik-Regular.ttf);
+}
+
+body,
+html,
+#root {
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+  overflow: hidden;
+}
+
+@theme {
+  --color-gray-500: #626c7f;
+  --color-gray-50: #f4f6fa;
+  --color-blue-950: #2d3949;
+  --color-blue-900: #313e51;
+  --color-blue-850: #3b4d66;
+  --color-blue-500: #306aff;
+  --color-blue-300: #abc1e1;
+  --color-blue-100: #edf1f9;
+  --color-blue-50: #ebf0ff;
+  --color-green-500: #2fd887;
+  --color-green-100: #e0fdef;
+  --color-purple-600: #a729f5;
+  --color-purple-100: #f6e7ff;
+  --color-orange-400: #ff7e35;
+  --color-orange-50: #fff5ed;
+  --color-red-500: #ee5454;
+
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-800: 64px;
+  --spacing-1600: 128px;
+  --spacing-1800: 144px;
+  --spacing-2300: 184px;
+
+  --breakpoint-tablet: 376px;
+  --breakpoint-desktop: 769px;
+}
+
+.textPreset5Medium {
+  font-family: RubikMedium;
+  font-size: 1.5rem;
+  line-height: 150%;
+}
+.textPreset5Regular {
+  font-family: RubikRegular;
+  font-size: 1.5rem;
+  line-height: 150%;
+}
+
+.textPreset1Mobile {
+  font-family: RubikMedium;
+  font-size: 5.5rem;
+  line-height: 100%;
+}
+.textPreset2MobileMedium {
+  font-family: RubikMedium;
+  font-size: 2.5rem;
+  line-height: 100%;
+}
+.textPreset2MobileLight {
+  font-family: RubikLight;
+  font-size: 2.5rem;
+  line-height: 100%;
+}
+.textPreset3Mobile {
+  font-family: RubikMedium;
+  font-size: 1.25rem;
+  line-height: 120%;
+}
+.textPreset4Mobile {
+  font-family: RubikMedium;
+  font-size: 1.125rem;
+  line-height: 100%;
+}
+.textPreset6Mobile {
+  font-family: RubikItalic;
+  font-size: 0.875rem;
+  line-height: 150%;
+}
