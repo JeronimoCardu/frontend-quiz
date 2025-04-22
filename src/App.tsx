@@ -17,7 +17,7 @@ export default function App() {
             <section className="!space-y-200 !pt-[2em]">
               <h1 className="textPreset2MobileLight tablet:!text-[4rem] text-blue-900 dark:text-white">
                 Welcome to the <br />
-                <span className="textPreset2MobileMedium dark:text-white">
+                <span className="textPreset2MobileMedium tablet:!text-[4rem] dark:text-white">
                   Frontend Quiz!
                 </span>
               </h1>
