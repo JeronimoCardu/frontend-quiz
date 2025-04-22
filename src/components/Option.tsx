@@ -43,9 +43,9 @@ export default function Option({ imgToShow, optionValue }: Props) {
         {optionValue}
       </p>
       {statusOption != "" && correctAnswer == optionValue ? (
-        <img className="" src="src/assets/images/icon-correct.svg" />
+        <img className="" src="/images/icon-correct.svg" />
       ) : statusOption == "incorrect" && answerSelected == optionValue ? (
-        <img className="" src="src/assets/images/icon-error.svg" />
+        <img className="" src="/images/icon-error.svg" />
       ) : (
         ""
       )}

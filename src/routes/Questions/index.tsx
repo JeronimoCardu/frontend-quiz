@@ -65,7 +65,7 @@ export default function Question() {
       setStatusOption("");
       setBtnActive(false);
       setAnswerSelected("");
-    }, 200);
+    }, 2000);
   };
   return (
     <>
@@ -121,7 +121,7 @@ export default function Question() {
           </button>
           {showError && (
             <div className="flex items-center justify-center !pb-2 text-red-500 dark:text-gray-50">
-              <img src="src/assets/images/icon-error.svg" />
+              <img src="/images/icon-error.svg" />
               <p className="textPreset4Mobile tablet:textPreset5Regular">
                 Please select an answer
               </p>
