@@ -9,11 +9,11 @@ export default function App() {
   return (
     <>
       {isHome ? (
-        <div className="homeBg">
-          <header className="relative z-10 !px-[1.5em] !py-[1em]">
+        <>
+          <header className="tablet:!px-[2em] desktop:!mx-[8em] desktop:!py-[3em] !px-[1.5em] !py-[1em]">
             <ToggleColorMode />
           </header>
-          <main className="tablet:!px-[2em] relative z-10 !px-[1.5em]">
+          <main className="desktop:grid desktop:grid-cols-2 desktop:!mx-[8em] tablet:!px-[2em] relative z-10 !px-[1.5em]">
             <section className="!space-y-200 !pt-[2em]">
               <h1 className="textPreset2MobileLight tablet:!text-[4rem] text-blue-900 dark:text-white">
                 Welcome to the <br />
@@ -35,7 +35,7 @@ export default function App() {
               ))}
             </section>
           </main>
-        </div>
+        </>
       ) : (
         <Outlet />
       )}

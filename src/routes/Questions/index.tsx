@@ -1,31 +1,35 @@
 import ToggleColorMode from "@/components/ToggleColorMode";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Option from "@/components/Option";
 import { quizzes } from "../../data.json";
 import useAnswerStore from "@/hooks/store";
 import { useState } from "react";
 
 export default function Question() {
+  const navigate = useNavigate();
+
   const { pathname } = useLocation();
   const location = pathname
     .split("")
     .filter((letter) => letter != "/")
     .join("");
   const quiz = quizzes[quizzes.findIndex((quiz) => quiz.title == location)];
-  const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showError, setShowError] = useState(false);
   const optionsLetter = ["A", "B", "C", "D"];
-  const colors = {
-    html: "bg-orange-50",
-    css: "bg-green-100",
-    js: "bg-blue-50",
-    accessibility: "bg-purple-100",
-  };
+
   const setAnswerSelected = useAnswerStore((state) => state.setAnswerSelected);
   const answerSelected = useAnswerStore((state) => state.answerSelected);
   const setAnswer = useAnswerStore((state) => state.setAnswer);
   const setBtnActive = useAnswerStore((state) => state.setBtnActive);
   const setStatusOption = useAnswerStore((state) => state.setStatusOption);
+  const myScored = useAnswerStore((state) => state.myScored);
+  const setMyScored = useAnswerStore((state) => state.setMyScored);
+  const currentQuestion = useAnswerStore((state) => state.currentQuestion);
+  const setCurrentQuestion = useAnswerStore(
+    (state) => state.setCurrentQuestion,
+  );
+
+  const colors = useAnswerStore((state) => state.colors);
 
   const handleSubmit = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     const target = e.target as HTMLElement;
@@ -48,19 +52,24 @@ export default function Question() {
     if (answerSelected == quiz.questions[currentQuestion].answer) {
       setBtnActive(false);
       setStatusOption("correct");
+      setMyScored(myScored + 1);
     } else {
       setStatusOption("incorrect");
     }
     setTimeout(() => {
+      if (currentQuestion + 1 === quiz.questions.length) {
+        navigate(`/${pathname.slice(1)}/scored`);
+      } else {
+        setCurrentQuestion(currentQuestion + 1);
+      }
       setStatusOption("");
       setBtnActive(false);
       setAnswerSelected("");
-      setCurrentQuestion(currentQuestion + 1);
-    }, 2000);
+    }, 200);
   };
   return (
     <>
-      <header className="tablet:!px-[2em] desktop:!px-[8em] desktop:!py-[3em] flex justify-between !px-[1.5em] !py-[1em]">
+      <header className="tablet:!px-[2em] desktop:!mx-[8em] desktop:!py-[3em] flex justify-between !px-[1.5em] !py-[1em]">
         <div className="flex items-center !space-x-200">
           <img
             className={`rounded-[0.375em] !p-1.5 ${quiz.title == "HTML" ? colors.html : quiz.title == "CSS" ? colors.css : quiz.title == "JavaScript" ? colors.js : colors.accessibility}`}
@@ -72,7 +81,7 @@ export default function Question() {
         </div>
         <ToggleColorMode />
       </header>
-      <main className="tablet:!px-[2em] desktop:!px-[8em] desktop:grid desktop:grid-cols-2 desktop:!space-x-1600 !px-[1.5em]">
+      <main className="tablet:!px-[2em] desktop:!mx-[8em] desktop:grid desktop:grid-cols-2 desktop:!space-x-1600 !px-[1.5em]">
         <section>
           <p className="textPreset6Mobile tablet:!text-[1.25em] !pb-[1em] text-gray-500 dark:text-blue-300">
             Question {currentQuestion} of {quiz.questions.length}

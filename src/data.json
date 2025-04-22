@@ -68,11 +68,11 @@
                     "question": "What attribute is used to provide the path of an image in the <img> tag?",
                     "options": [
                         "link",
-                        "src",
+                        "/src",
                         "href",
                         "url"
                     ],
-                    "answer": "src"
+                    "answer": "/src"
                 },
                 {
                     "question": "Which HTML tag is used to create an unordered list?",
@@ -108,7 +108,7 @@
         },
         {
             "title": "CSS",
-            "icon": "src/assets/images/icon-css.svg",
+            "icon": "/src/assets/images/icon-css.svg",
             "questions": [
                 {
                     "question": "What does CSS stand for?",
@@ -214,7 +214,7 @@
         },
         {
             "title": "JavaScript",
-            "icon": "src/assets/images/icon-js.svg",
+            "icon": "/src/assets/images/icon-js.svg",
             "questions": [
                 {
                     "question": "Which syntax is correct to output 'Hello World' in an alert box?",
@@ -320,7 +320,7 @@
         },
         {
             "title": "Accessibility",
-            "icon": "src/assets/images/icon-accessibility.svg",
+            "icon": "/src/assets/images/icon-accessibility.svg",
             "questions": [
                 {
                     "question": "What does 'WCAG' stand for?",

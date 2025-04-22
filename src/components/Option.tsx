@@ -9,17 +9,14 @@ type Props = {
 export default function Option({ imgToShow, optionValue }: Props) {
   const location = useLocation();
   const pathname = location.pathname;
-  const colors = {
-    html: "bg-orange-50",
-    css: "bg-green-100",
-    js: "bg-blue-50",
-    accessibility: "bg-purple-100",
-  };
+
   const correctAnswer = useAnswerStore((state) => state.correctAnswer);
   const statusOption = useAnswerStore((state) => state.statusOption);
   const answerSelected = useAnswerStore((state) => state.answerSelected);
   const btnActive = useAnswerStore((state) => state.btnActive);
   const setBtnActive = useAnswerStore((state) => state.setBtnActive);
+  const colors = useAnswerStore((state) => state.colors);
+
   return (
     <NavLink
       onClick={() => {
