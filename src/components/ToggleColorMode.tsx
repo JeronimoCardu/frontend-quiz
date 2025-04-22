@@ -1,7 +1,7 @@
-import sunLight from "../assets/images/icon-sun-light.svg";
-import sunDark from "../assets/images/icon-sun-dark.svg";
-import moonLight from "../assets/images/icon-moon-light.svg";
-import moonDark from "../assets/images/icon-moon-dark.svg";
+import sunLight from "/images/icon-sun-light.svg";
+import sunDark from "/images/icon-sun-dark.svg";
+import moonLight from "/images/icon-moon-light.svg";
+import moonDark from "/images/icon-moon-dark.svg";
 import { useColorMode } from "./ui/color-mode";
 
 export default function ToggleColorMode() {
@@ -9,7 +9,7 @@ export default function ToggleColorMode() {
   return (
     <div
       onClick={toggleColorMode}
-      className="flex cursor-pointer items-center justify-end gap-[0.5em] "
+      className="flex cursor-pointer items-center justify-end gap-[0.5em]"
     >
       <img
         className="tablet:w-[1.5em] tablet:h-[1.5em] h-[1em] w-[1em]"
