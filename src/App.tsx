@@ -6,7 +6,6 @@ import { Outlet, useLocation } from "react-router-dom";
 export default function App() {
   const location = useLocation();
   const isHome = location.pathname == "/";
-  console.log(isHome);
   return (
     <>
       {isHome ? (
