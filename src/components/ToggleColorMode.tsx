@@ -9,7 +9,7 @@ export default function ToggleColorMode() {
   return (
     <div
       onClick={toggleColorMode}
-      className="flex cursor-pointer items-center justify-end gap-[0.5em] !px-[1.5em] !py-[1em]"
+      className="flex cursor-pointer items-center justify-end gap-[0.5em] "
     >
       <img
         className="tablet:w-[1.5em] tablet:h-[1.5em] h-[1em] w-[1em]"

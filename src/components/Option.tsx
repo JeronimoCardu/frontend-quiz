@@ -6,6 +6,7 @@ type Props = {
 };
 
 export default function Option({ imgToShow, optionValue }: Props) {
+  optionValue = optionValue[0].toUpperCase() + optionValue.slice(1);
   const colors = {
     html: "bg-orange-50",
     css: "bg-green-100",
@@ -15,10 +16,11 @@ export default function Option({ imgToShow, optionValue }: Props) {
     correct: "bg-green-500",
     activeHover: "bg-purple-600",
   };
+
   return (
     <NavLink
-      to={`/${optionValue.toLowerCase()}`}
-      className="dark:bg-blue-850 flex items-center gap-[1em] rounded-[0.75em] bg-white !p-[1em]"
+      to={`/${optionValue}`}
+      className={`shadowOption dark:bg-blue-850 flex items-center gap-[1em] rounded-[0.75em] bg-white !p-[1em]`}
     >
       <div>
         {imgToShow.length > 1 ? (
@@ -27,7 +29,9 @@ export default function Option({ imgToShow, optionValue }: Props) {
             src={imgToShow}
           />
         ) : (
-          <p className="">{imgToShow}</p>
+          <p className="flex h-[2.5em] w-[2.5em] items-center justify-center rounded-[0.375em] bg-gray-50 text-gray-500">
+            {imgToShow}
+          </p>
         )}
       </div>
       <p className="textPreset4Mobile tablet:!text-[1.75rem] text-blue-900 dark:text-white">
